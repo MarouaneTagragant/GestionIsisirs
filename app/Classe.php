@@ -25,10 +25,10 @@ class Classe extends Model
      */
     public function student()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsTo('App\User');
     }
 
-    public function professeur()
+    public function professeurs()
     {
         return $this->belongsToMany('App\User');
     }
