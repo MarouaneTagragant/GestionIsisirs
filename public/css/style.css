@@ -1,0 +1,9 @@
+.container {
+    max-width: 96%;
+}
+.admin_dash a{
+    text-decoration: none;
+}
+a.dashadd.btn.btn-success {
+    float: right;
+}
