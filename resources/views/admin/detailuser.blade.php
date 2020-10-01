@@ -50,8 +50,8 @@
                         </tbody>
                         
                       </table>
-                      <a href="/admin/updateUser/{{$user->id}}" type="button" class="btn btn-warning">Edit</a>
-                      <a href="/admin/deleteUser/{{$user->id}}" type="button" class="btn btn-danger">Delete</a>
+                      <a href="{{ route('admin.updateUser'  ,['id'=> $user->id]) }}" type="button" class="btn btn-warning">Edit</a>
+                      <a href="{{ route('admin.deleteUser'  ,['id'=> $user->id]) }}" type="button" class="btn btn-danger">Delete</a>
 
                         
                 </div>

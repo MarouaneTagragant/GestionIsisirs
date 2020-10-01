@@ -28,9 +28,9 @@
                       <td>{{ $user->name }}</td>
                       <td>{{ $user->role->name}}</td>
                         <td>
-                            <a href="/admin/showUser/{{$user->id}}" type="button" class="btn btn-info">Detaills</a>
-                            <a href="/admin/updateUser/{{$user->id}}" type="button" class="btn btn-warning">Edit</a>
-                            <a href="/admin/deleteUser/{{$user->id}}" type="button" class="btn btn-danger">Delete</a>
+                            <a href="{{ route('admin.showUser'  ,['id'=> $user->id]) }}" type="button" class="btn btn-info">Detaills</a>
+                            <a href="{{ route('admin.updateUser',['id'=> $user->id]) }}" type="button" class="btn btn-warning">Edit</a>
+                            <a href="{{ route('admin.deleteUser',['id'=> $user->id]) }}" type="button" class="btn btn-danger">Delete</a>
                         </td>
                       </tr>
                       @endforeach

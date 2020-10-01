@@ -23,9 +23,9 @@
                       <td>{{ $niveau->name }}</td>
                       <td>{{ $niveau->section->name  }}</td>
                         <td>
-                            <a href="/admin/niveau/show/{{$niveau->id}}" type="button" class="btn btn-info">Detaills</a>
-                            <a href="/admin/niveau/edit/{{$niveau->id}}" type="button" class="btn btn-warning">Edit</a>
-                            <a href="/admin/niveau/delete/{{$niveau->id}}" type="button" class="btn btn-danger">Delete</a>
+                            <a href="{{ route('admin.showNiveau'  ,['id' => $niveau->id]) }}" type="button" class="btn btn-info">Detaills</a>
+                            <a href="{{ route('admin.editNiveau'  ,['id' => $niveau->id]) }}" type="button" class="btn btn-warning">Edit</a>
+                            <a href="{{ route('admin.deleteNiveau',['id' => $niveau->id]) }}" type="button" class="btn btn-danger">Delete</a>
                         </td>
                       </tr>
                       @endforeach
