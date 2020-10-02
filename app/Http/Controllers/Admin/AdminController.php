@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
+use App\Classe;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -23,7 +25,11 @@ class AdminController extends Controller
     } 
 
     public function createUser(){
-        return view('admin.add');
+        $classes = Classe::all();
+
+        return view('admin.add',[
+            'classes' => $classes
+        ]);
     }
 
 
@@ -40,6 +46,9 @@ class AdminController extends Controller
 
         $role = Role::find($request['role']);
         $user->role()->associate($role);
+
+        $class = Classe::find($request['userclass']);
+        $user->classe()->associate($class);
 
         $user->save();
 

@@ -23,7 +23,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('gender');
             $table->rememberToken();
-            $table->timestamps();        
+            $table->timestamps();   
+            $table->integer('classe_id');     
         });
     }
 

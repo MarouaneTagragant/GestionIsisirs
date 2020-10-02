@@ -25,7 +25,7 @@ class Classe extends Model
      */
     public function student()
     {
-        return $this->belongsTo('App\User');
+        return $this->hasMany('App\User');
     }
 
     public function professeurs()

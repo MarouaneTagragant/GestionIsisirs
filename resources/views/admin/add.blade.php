@@ -90,6 +90,25 @@
                             </div>
                         </div>
 
+                        
+                        <div class="form-group row">
+                            <label for="userclass" class="col-md-4 col-form-label text-md-right">{{ __('User class') }}</label>
+
+                            <div class="col-md-6">
+                                <select id="userclass" class="form-control @error('userclass') is-invalid @enderror" name="userclass"  required autocomplete="userclass" autofocus>
+                                    @foreach ($classes as $class)
+                                <option value="{{ $class->id }}">{{ $class->name }}</option>
+                                    @endforeach
+                                </select>
+                                @error('userclass')
+                                    <span class="invalid-feedback" userclass="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
