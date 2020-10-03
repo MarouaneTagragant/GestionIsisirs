@@ -37349,11 +37349,14 @@ $(function () {
                 Maternelle: ['CP', 'CE1', 'CE2','CM1'],
                 Primaire  : ['1er-Primaire', '2eme-Primaire', '3eme-Primaire','4eme-Primaire','5eme-Primaire','6eme-Primaire'],
                 College   : ['1er-College', '2eme-College', '3eme-College'],
-                Lycée   : ['1er-Lycée', '2eme-Lycée', '3eme-Lycée']
+                Lycée     : ['1er-Lycée', '2eme-Lycée', '3eme-Lycée']
             }
-
+            $Cities.hide();
+            $('#niveaudeClass').hide();
             $States.change(function () {
                 var $selectedWorker = $(this).find('option:selected').text();
+                $Cities.show();
+                $('#niveaudeClass').show();
                 $Cities.html($citiesList.filter(function () {
                     return $.inArray($(this).text(), workerandFruits[$selectedWorker]) >= 0;
                 }));

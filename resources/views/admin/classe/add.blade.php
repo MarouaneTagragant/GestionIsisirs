@@ -45,7 +45,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="niveaudeClass" class="col-md-4 col-form-label text-md-right">{{ __('Niveau CLass') }}</label>
+                                <label id="niveaudeClass" for="niveaudeClass" class="col-md-4 col-form-label text-md-right">{{ __('Niveau CLass') }}</label>
 
                                 <div class="col-md-6">
                                     <select name="niveauClass" id="niveauClass" class="form-control form-control-sm">
