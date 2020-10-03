@@ -15,6 +15,7 @@
                         <th scope="col">Name</th>
                         <th scope="col">Section</th>
                         <th scope="col">Niveau</th>
+                        <th scope="col">Name of the professeur</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -24,11 +25,12 @@
                         <td>{{ $classe->name }}</td>
                         <td>{{ $classe->section->name }}</td>
                         <td>{{ $classe->niveau->name }}</td>
-                            <td>
-                                <a href="{{ route('admin.showSection'    ,['id' => $section->id]) }}" type="button" class="btn btn-info">Detaills</a>
-                                <a href="{{ route('admin.editSection'    ,['id' => $section->id]) }}" type="button" class="btn btn-warning">Edit</a>
-                                <a href="{{ route('admin.deleteSection'  ,['id' => $section->id]) }}" type="button" class="btn btn-danger">Delete</a>
-                            </td>
+                        <td>
+                          @foreach ($classe->professeurs as $prof)
+                              {{$prof->name}}<br>
+                          @endforeach
+                        </td>
+
                       </tr>
                       @endforeach
                     </tbody>

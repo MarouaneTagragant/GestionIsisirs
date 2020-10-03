@@ -29,12 +29,15 @@ class AdminClassController extends Controller
     }
 
     public function add(){
-        $niveaux = DB::table('niveaux')->get();
+        $niveaux  = DB::table('niveaux')->get();
         $sections = DB::table('sections')->get();
+        $professeurs = DB::table('users')->where('role_id',2)->get();
+
 
         return view('admin.classe.add',[
-            "niveaux" => $niveaux,
-            "sections" => $sections
+            "niveaux"     => $niveaux,
+            "sections"    => $sections,
+            "professeurs" => $professeurs
         ]);
     }
 
@@ -49,8 +52,10 @@ class AdminClassController extends Controller
         $niveau =  Niveau::find($request['niveauClass']);
         $class->niveau()->associate($niveau);
 
+
         $class->save();
 
+        $class->professeurs()->attach($request['profClass']);
 
     }
 

@@ -49,22 +49,9 @@
 
                                 <div class="col-md-6">
                                     <select name="niveauClass" id="niveauClass" class="form-control form-control-sm">
-                                            <option value="1">CP</option>
-                                            <option value="2">CE1</option>
-                                            <option value="3">CE2</option>
-                                            <option value="4">CM1</option>
-                                            <option value="1">1er-Primaire</option>
-                                            <option value="2">2eme-Primaire</option>
-                                            <option value="3">3eme-Primaire</option>
-                                            <option value="4">4eme-Primaire</option>
-                                            <option value="5">5eme-Primaire</option>
-                                            <option value="6">6eme-Primaire</option>
-                                            <option value="1">1er-College</option>
-                                            <option value="2">2eme-College</option>
-                                            <option value="3">3eme-College</option>
-                                            <option value="1">1er-Lycée</option>
-                                            <option value="2">2eme-Lycée</option>
-                                            <option value="3">3eme-Lycée</option>
+                                            @foreach ($niveaux as $niveau)
+                                                <option value="{{ $niveau->id }}">{{ $niveau->name }}</option>
+                                            @endforeach
                                     </select>
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -73,6 +60,24 @@
                                     @enderror
                                 </div>
                             </div>
+
+                            <div class="form-group row">
+                                <label id="profeClass" for="profeClass" class="col-md-4 col-form-label text-md-right">{{ __('Professeur of the CLass') }}</label>
+
+                                <div class="col-md-6">
+                                    <select name="profClass" id="profClass" class="form-control form-control-sm">
+                                            @foreach ($professeurs as $professeur)
+                                                <option value="{{ $professeur->id }}">{{ $professeur->name }}</option>
+                                            @endforeach
+                                    </select>
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
