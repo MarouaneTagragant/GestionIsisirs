@@ -21,13 +21,15 @@ Auth::routes();
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/users', 'Admin\AdminController@listUsers')->name('admin.listUsers');
+
+//Route::get('/add', 'AdminController@createUser')->name('add');
+
 
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
 
     Route::get('/', 'AdminController@Home')->name('Home');
-    Route::get('/users', 'AdminController@listUsers')->name('listUsers');
-    Route::get('/add', 'AdminController@createUser')->name('add');
     Route::put('/add/store', 'AdminController@storeUser')->name('store');
     Route::get('/updateUser/{id}', 'AdminController@updateUser')->name('updateUser');
     Route::get('/showUser/{id}', 'AdminController@showUser')->name('showUser');

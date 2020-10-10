@@ -19,17 +19,15 @@ class AdminController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware(['auth', 'can:user-admin']);
-    } 
+    // public function __construct()
+    // {
+    //     $this->middleware(['auth', 'can:user-admin']);
+    // } 
 
     public function createUser(){
         $classes = Classe::all();
 
-        return view('admin.add',[
-            'classes' => $classes
-        ]);
+        return response()->json($classes);
     }
 
 
@@ -62,9 +60,7 @@ class AdminController extends Controller
     public function listUsers()
     {
         $users = User::with('role')->get();
-        return view('admin.users', [
-            'users' => $users
-        ]);
+        return response()->json($users);
     }
 
     public function updateUser($id)

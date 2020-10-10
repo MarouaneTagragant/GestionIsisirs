@@ -80,31 +80,10 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <div id="test"></div>
+                
+    <script src="{{ asset('js/app.js') }}"></script>
             </div>
         </div>
     </body>
-
-    <script>
-        $(document).ready(function() {
-            // SideNav Button Initialization
-            $(".button-collapse").sideNav2();
-            // SideNav Scrollbar Initialization
-            var sideNavScrollbar = document.querySelector('.custom-scrollbar');
-            var ps = new PerfectScrollbar(sideNavScrollbar);
-        });
-    </script>
 </html>

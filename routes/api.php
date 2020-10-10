@@ -21,6 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Route::get('admin/users', 'Admin\AdminController@listUsers')->name('admin.listUsers');
+Route::get('/users','Admin\AdminController@listUsers')->name('listUsers');
 
+Route::get('/add', 'Admin\AdminController@createUser')->name('add');
 
